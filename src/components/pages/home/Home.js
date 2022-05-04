@@ -12,7 +12,6 @@ function Home() {
     <Posts/>
     <Sidebar/>
     </div>
-
     </>
   )
 }
