@@ -5,19 +5,23 @@ import Write from "./components/pages/write/Write";
 import Settings from "./components/pages/settings/Settings";
 import Login from "./components/pages/login/Login";
 import Register from "./components/pages/register/register";
+import{BrowserRouter as Router, Switch, Route, Link, Routes} from "react-router-dom";
 
 
 function App() {
+  const user = false;
   return (
-    <div className="App">
+    <Router>
      <TopBar/>
-     {/* <Home/> */}
-     {/* <Single/> */}
-     {/* <Write/> */}
-     {/* <Settings/> */}
-     {/* <Login/> */}
-     <Register/>
-    </div>
+     <Routes>
+     <Route exact path="/" element={<Home />}/>
+     <Route path="/register" element={user ? <Home/> : <Register />}/>
+     <Route path="/login" element={user ? <Home/> : <Login />}/>
+     <Route path="/write" element={user ? <Write />: <Register/>}/>
+     <Route path="/settings" element={user ?<Settings />: <Register/>}/>
+     <Route path="/Post/:postId" element={<Single />}/>
+     </Routes>
+    </Router>
   );
 }
 
