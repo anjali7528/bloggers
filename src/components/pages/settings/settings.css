@@ -83,3 +83,9 @@
     cursor: pointer;
     font-size:large;
 }
+
+.notifi{
+    color:green;
+    text-align: center;
+    margin: 20px;
+}

@@ -8,6 +8,7 @@ import{BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import { Context } from "./context/Context";
 import {useContext} from 'react'
 import Single from "./components/pages/single/Single";
+import Sidebar from "./components/sidebar/Sidebar";
 
 
 function App() {
@@ -22,6 +23,8 @@ function App() {
      <Route path="/write" element={user ? <Write />: <Register/>}/>
      <Route path="/settings" element={user ?<Settings />: <Register/>}/>
      <Route path="/post/:postId" element={<Single />}/>
+     <Route path="/contact" element={user ?<Sidebar />: <Register/>}/>
+
      </Routes>
     </Router>
   );

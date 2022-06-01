@@ -26,7 +26,7 @@ export default function Post({post}) {
       </Link>
       <hr/>
       <span className='postDate'>
-       {post.createdAt}
+      {new Date(post.createdAt).toDateString()}
       </span>
       <p className='postDesc'>{post.desc}</p>
     </div>

@@ -1,6 +1,5 @@
 import React, {useState} from 'react'
 import './register.css'
-import { Link } from 'react-router-dom'
 import axios from 'axios'
 
 export default function Register() {
@@ -17,8 +16,7 @@ export default function Register() {
       const res =await axios.post("/auth/register",{
         username,
          email,
-        password
-        
+        password,
       });
     
      res.data && window.location.replace("/login");
@@ -53,9 +51,6 @@ export default function Register() {
              onChange={e=>setPassword(e.target.value) } />
             <button className="registerButton" type="submit">Register</button>
         </form>
-        <button className="registerLoginButton">Login
-        <Link className="link" to="/login"></Link>
-        </button>
        {error && <span>Something went wrong!</span>} 
     </div>
   )
